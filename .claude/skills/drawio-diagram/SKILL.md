@@ -30,7 +30,8 @@ the information obvious, not the structure that is easiest to draw.
    layout math for that family. Don't reinvent geometry — the references already encode
    spacing that lines up.
 3. **Build on the base skeleton** (below). Lay elements out on a coordinate grid, apply the
-   shared design system, then connect with edges.
+   shared design system, then connect with edges. Add **icons** to nodes that represent
+   concrete things (a user, a database, a service) — see [Icons](#icons).
 4. **Validate** with `scripts/validate_drawio.py` and fix anything it reports.
 5. **Save** to a `.drawio` file (or output the XML inline if the user asked for that), and
    tell the user the path and what diagram type you chose.
@@ -134,6 +135,24 @@ Edge        edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=classic;endF
 
 Swap the three color tokens (`fillColor`, `fontColor`, and container `strokeColor`) to change
 family. To switch a box to the Green family: `fillColor=#A7F3D0;fontColor=#065F46`.
+
+### Icons
+
+Icons make a diagram readable at a glance — a person, a database, a robot beats a plain
+labeled box. Add one whenever a node represents a concrete real-world thing. The bundled helper
+emits a paste-ready, recolored icon cell, so you don't hand-encode anything:
+
+```bash
+python3 scripts/icon_cell.py --list                       # available icons + aliases
+python3 scripts/icon_cell.py database --color "#1E3A8A"   # style fragment for an existing cell
+python3 scripts/icon_cell.py user --color "#1E3A8A" --cell --id ico-u --x 20 --y 18 --size 40 --parent panel-1
+```
+
+Recolor each icon to its group's accent font color so it reads as part of that group. For full
+guidance — concept→icon map, layout recipes (icon-left header, feature row, labeled icon node),
+and the AWS/Azure/GCP vendor-stencil catalog — read `references/icons.md`. **Never invent a
+draw.io stencil name** (it renders blank and can't be validated offline): use a bundled icon or
+a catalog string, else fall back to a labeled generic shape.
 
 ### Typography & layout grid
 

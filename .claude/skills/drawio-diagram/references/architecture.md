@@ -108,7 +108,8 @@ Append to a vertex `style` to change the shape (default is rectangle when `round
 | Decision / gateway   | `rhombus;` |
 | Circle / node        | `ellipse;` |
 | Document             | `shape=document;` |
-| Pre-built node icons | `sketch=0;outlineConnect=0;shape=mxgraph.aws4.resourceIcon;...` (AWS/GCP/Azure stencils) |
+| Clean line icons (user, db, server, robot, cloud…) | use the bundled helper — see `references/icons.md` |
+| Cloud-vendor logos (AWS/Azure/GCP/K8s) | verbatim stencil strings in `references/icons.md` |
 
 Connector variants (edge `style`):
 

@@ -170,3 +170,6 @@ alternating above/below to avoid crowding.
 
 Edge labels: put the condition in the edge `value` and add `fontSize=11;fontColor=#374151;` to
 its style. Keep label text short ("Yes"/"No"/"timeout") so it doesn't overlap the line.
+
+To put an icon on a step (e.g. a user actor at the start, a database at a data step), add an
+icon cell from the bundled set — see `references/icons.md`.
