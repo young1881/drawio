@@ -1,0 +1,30 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon?
+
+# Draw.io temp / backup files
+*.bkp
+*.dtmp
+~$*
+
+# Python (validator script)
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.mypy_cache/
+.pytest_cache/
+
+# Editors / IDEs
+.vscode/
+.idea/
+*.swp
+
+# Claude Code local (keep the skill under .claude/skills tracked; ignore local settings only)
+.claude/settings.local.json
+.claude/*.local.json
+
+# Local working diagrams (contain business data — keep on disk, do not push)
+Memory评测结果可视化.drawio
